@@ -1,9 +1,0 @@
-numBalanceNegPos <- 3
-proporcionTrainTest <- 0.8
-
-> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
-  nTot pPos pNeg  vp   vn  fp  fn  sc_gini    sc_ks   sc_auc
-1 1600 0.25 0.75 206 1023 177 194 0.534335 0.414167 0.767168
-> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
-  nTot   pPos   pNeg vp   vn  fp fn  sc_gini    sc_ks   sc_auc
-1 1371 0.0722 0.9278 40 1058 214 59 0.356331 0.274681 0.678165
