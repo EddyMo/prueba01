@@ -1,0 +1,140 @@
+Basado en los resultados de la Iteración 1:
+
+numBalanceNegPos <- 3
+proporcionTrainTest <- 0.8
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini    sc_ks   sc_auc
+1 1600 0.25 0.75 206 1023 177 194 0.534335 0.414167 0.767168
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp   vn  fp fn  sc_gini    sc_ks   sc_auc
+1 1371 0.0722 0.9278 40 1058 214 59 0.356331 0.274681 0.678165
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+*elegido para la iteración 2 *
+
+breaks_list = list(
+  EDAD = c(27,31,35,37), # 27.27,30.93,35.55,36.7 | 29,33,4
+  NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6") #"1%,%3%,%7","2","4%,%5%,%6"
+  ,INGRESOS_GASTOS = c(1.48,2.25,4.05)
+  ,DEPARTAMENTO = c("SANTA CRUZ%,%ORURO", "LA PAZ", "COCHABAMBA%,%BENI%,%CHUQUISACA%,%PANDO%,%TARIJA")
+  ,CARGO = c("1%,%2%,%10%,%12","5%,%9","3%,%4%,%6%,%7%,%8%,%11")
+  ,ESTADO_CIVIL = c("1","2%,%4%,%5","3")
+  ,PASIVO_ACTIVO = c(0.01)
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini  sc_ks   sc_auc
+1 2000  0.2  0.8 245 1267 333 155 0.531895 0.4175 0.765948
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp  vn  fp fn  sc_gini    sc_ks   sc_auc
+1 1371 0.0722 0.9278 55 973 299 44 0.406105 0.336216 0.703053
+
+----------------------------------------------------------------------------------------------
+breaks_list = list(
+  EDAD = c(27,31,35,37), # 27.27,30.93,35.55,36.7 | 29,33,4
+  NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6") #"1%,%3%,%7","2","4%,%5%,%6"
+  ,INGRESOS_GASTOS = c(1.48,2.25,4.05)
+  ,DEPARTAMENTO = c("SANTA CRUZ%,%ORURO", "LA PAZ", "COCHABAMBA%,%BENI%,%CHUQUISACA%,%PANDO%,%TARIJA")
+  ,CARGO = c("1%,%2%,%10%,%12","5%,%9","3%,%4%,%6%,%7%,%8%,%11")
+  ,ESTADO_CIVIL = c("1","2%,%4%,%5","3")
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini sc_ks   sc_auc
+1 2000  0.2  0.8 191 1397 203 209 0.532884 0.415 0.766442
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp   vn  fp fn  sc_gini    sc_ks   sc_auc
+1 1371 0.0722 0.9278 42 1078 194 57 0.403389 0.332166 0.701695
+
+----------------------------------------------------------------------------------------------
+breaks_list = list(
+  EDAD = c(27,31,35,37), # 27.27,30.93,35.55,36.7 | 29,33,4
+  NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6") #"1%,%3%,%7","2","4%,%5%,%6"
+  ,INGRESOS_GASTOS = c(1.48,2.25,4.05)
+  ,DEPARTAMENTO = c("SANTA CRUZ%,%ORURO", "LA PAZ", "COCHABAMBA%,%BENI%,%CHUQUISACA%,%PANDO%,%TARIJA")
+  ,CARGO = c("1%,%2%,%10%,%12","5%,%9","3%,%4%,%6%,%7%,%8%,%11")
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini   sc_ks   sc_auc
+1 2000  0.2  0.8 243 1269 331 157 0.533548 0.41625 0.766774
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp  vn  fp fn  sc_gini    sc_ks   sc_auc
+1 1371 0.0722 0.9278 55 968 304 44 0.403032 0.326115 0.701516
+
+----------------------------------------------------------------------------------------------
+breaks_list = list(
+  EDAD = c(27,31,35,37), # 27.27,30.93,35.55,36.7 | 29,33,4
+  NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6") #"1%,%3%,%7","2","4%,%5%,%6"
+  ,INGRESOS_GASTOS = c(1.48,2.25,4.05)
+  ,DEPARTAMENTO = c("SANTA CRUZ%,%ORURO", "LA PAZ", "COCHABAMBA%,%BENI%,%CHUQUISACA%,%PANDO%,%TARIJA")
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini    sc_ks   sc_auc
+1 2000  0.2  0.8 265 1197 403 135 0.526177 0.413125 0.763088
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp  vn  fp fn sc_gini    sc_ks   sc_auc
+1 1371 0.0722 0.9278 58 905 367 41 0.40867 0.324304 0.704335
+
+----------------------------------------------------------------------------------------------
+breaks_list = list(
+  EDAD = c(27,31,35,37), # 27.27,30.93,35.55,36.7 | 29,33,4
+  NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6") #"1%,%3%,%7","2","4%,%5%,%6"
+  ,INGRESOS_GASTOS = c(1.48,2.25,4.05)
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini  sc_ks   sc_auc
+1 2000  0.2  0.8 204 1356 244 196 0.520244 0.4025 0.760122
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp   vn  fp fn  sc_gini    sc_ks   sc_auc
+1 1371 0.0722 0.9278 45 1045 227 54 0.397235 0.318801 0.698617
+
+----------------------------------------------------------------------------------------------
+breaks_list = list(
+  EDAD = c(27,31,36) # 27.27,30.93,35.55,36.7 | 29,33,4
+  ,NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6") #"1%,%3%,%7","2","4%,%5%,%6"
+  ,INGRESOS_GASTOS = c(1.48,2.25,4.05)
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini    sc_ks   sc_auc
+1 2000  0.2  0.8 204 1356 244 196 0.520245 0.401875 0.760123
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp   vn  fp fn  sc_gini    sc_ks   sc_auc
+1 1371 0.0722 0.9278 45 1044 228 54 0.397013 0.317062 0.698506
+
+----------------------------------------------------------------------------------------------
+breaks_list = list(
+  EDAD = c(27,31,36), # 27.27,30.93,35.55,36.7 | 29,33,4
+  NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6")
+
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini   sc_ks   sc_auc
+1 2000  0.2  0.8 187 1405 195 213 0.526852 0.40875 0.763426
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp   vn  fp fn sc_gini    sc_ks  sc_auc
+1 1371 0.0722 0.9278 38 1077 195 61  0.3809 0.291119 0.69045
+
+----------------------------------------------------------------------------------------------
+  EDAD = c(27,31,36) # 27.27,30.93,35.55,36.7 | 29,33,4
+  ,NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6") #"1%,%3%,%7","2","4%,%5%,%6"
+  ,NIVEL_INGRESO = c("NO INDICADO%,%MENOS DE $600", "$600 - $1200%,%$1201 - $2000%,%$2001 - $5000","MÁS DE $5000")
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini    sc_ks   sc_auc
+1 2000  0.2  0.8 191 1393 207 209 0.527734 0.410625 0.763867
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp   vn  fp fn  sc_gini    sc_ks  sc_auc
+1 1371 0.0722 0.9278 39 1073 199 60 0.384061 0.288641 0.69203
+
+----------------------------------------------------------------------------------------------
+breaks_list = list(
+  EDAD = c(27,31,36), # 27.27,30.93,35.55,36.7 | 29,33,4
+  NIVEL_EDUCACION = c("1%,%3%,%7","2","4%,%5%,%6")
+  ,MONTO_OPERACION = c(5000,7000)
+
+> metricasTrain %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot pPos pNeg  vp   vn  fp  fn  sc_gini    sc_ks   sc_auc
+1 2000  0.2  0.8 232 1284 316 168 0.522403 0.406875 0.761202
+> metricasTest %>% select(nTot, pPos, pNeg, vp, vn, fp, fn, sc_gini, sc_ks, sc_auc)
+  nTot   pPos   pNeg vp  vn  fp fn  sc_gini   sc_ks   sc_auc
+1 1371 0.0722 0.9278 47 996 276 52 0.382361 0.28876 0.691181
+
+
